@@ -35,42 +35,44 @@ class _MyAppState extends State<MyApp> {
                 Films data = snapshot.data as Films;
                 // return SizedBox();
 
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Image.network(data.image!, width: 500),
-                    Image.network(data.cover!),
-                    Text(
-                      '${data.title}',
-                      style: const TextStyle(
+                return SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Image.network(data.getCover(data.cover)!, width: 500),
+                      Image.network(data.getCover(data.cover)!),
+                      Text(
+                        '${data.title}',
+                        style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Dancing',
+                            color: Colors.blueAccent),
+                      ),
+                      Text(
+                        '${data.overview}',
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Dancing',
-                          color: Colors.blueAccent),
-                    ),
-                    Text(
-                      '${data.overview}',
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Dancing',
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {});
-                      },
-                      child: const Text(
-                        'Spin',
-                        style: TextStyle(
-                          fontSize: 15,
                         ),
                       ),
-                    )
-                  ],
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {});
+                        },
+                        child: const Text(
+                          'Spin',
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 );
               } else {
                 //un objet circulaire pour attendre le chargement des données
