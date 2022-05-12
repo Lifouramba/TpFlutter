@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Image.network(data.getCover(data.cover)!, width: 500),
-                      Image.network(data.getCover(data.cover)!),
+                      Image.network(data.getCover(data.cover)!, scale: 1.0),
                       Text(
                         '${data.title}',
                         style: const TextStyle(
